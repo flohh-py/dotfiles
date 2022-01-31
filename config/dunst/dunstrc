@@ -1,0 +1,59 @@
+[global]
+monitor = 0
+follow = mouse
+geometry = "300x60-20+48"
+indicate_hidden = yes
+shrink = yes
+separator_height = 2
+padding = 5
+horizontal_padding = 5
+frame_width = 2
+sort = no
+idle_threshold = 120
+font = termius 10
+line_height = 4
+markup = strip
+format = <b>%a</b>\n<b>%s</b>\n%b
+alignment = left
+show_age_threshold = 60
+word_wrap = yes
+ignore_newline = no
+stack_duplicates = false
+hide_duplicate_count = no
+show_indicators = no
+icon_position = left
+max_icon_size = 32
+min_icon_size = 16
+sticky_history = yes
+history_length = 20
+browser = /usr/bin/firefox -new-tab
+always_run_script = true
+title = Dunst
+class = Dunst
+
+per_monitor_dpi = true
+
+[shortcuts]
+close = ctrl+space
+close_all = ctrl+shift+space
+history = ctrl+grave
+context = ctrl+shift+period
+
+[urgency_low]
+timeout = 5
+background = "#282a36"
+foreground = "#6272a4"
+icon = /usr/share/icons/Papirus-Dark/32x32@2x/status/dialog-information.svg
+
+[urgency_normal]
+timeout = 10
+background = "#282a36"
+foreground = "#bd93f9"
+icon = /usr/share/icons/Papirus-Dark/32x32@2x/status/dialog-information.svg
+
+[urgency_critical]
+timeout = 0
+background = "#ff5555"
+foreground = "#f8f8f2"
+frame_color = "#ff5555"
+icon = /usr/share/icons/Papirus-Dark/32x32@2x/status/dialog-warning.svg
