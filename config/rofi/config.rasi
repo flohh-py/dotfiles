@@ -1,0 +1,8 @@
+configuration {
+ modi: "drun,run,window,ssh";
+ show-icons: true;
+ combi-modi: "window,drun,ssh";
+ kb-row-tab: "Shift+Tab";
+ kb-mode-next: "Tab";
+ }
+@theme "arthur"
