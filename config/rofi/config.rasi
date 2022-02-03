@@ -5,4 +5,4 @@ configuration {
  kb-row-tab: "Shift+Tab";
  kb-mode-next: "Tab";
  }
-@theme "arthur"
+@theme "Pop-Dark"
