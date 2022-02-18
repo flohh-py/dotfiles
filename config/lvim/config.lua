@@ -52,7 +52,6 @@ lvim.builtin.which_key.mappings["t"] = {
   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Diagnostics" },
 }
-
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
@@ -139,6 +138,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- Additional Plugins
 lvim.plugins = {
     {"rupurt/vim-mql5"},
+    {"dbeniamine/cheat.sh-vim"},
     {"folke/tokyonight.nvim"},
     {
       "folke/trouble.nvim",
