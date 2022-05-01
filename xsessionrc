@@ -1,0 +1,8 @@
+nm-applet &
+xfce4-power-manager &
+xfce4-clipman &
+pasystray &
+xautolock -time 10 -locker slock -nowlocker slock &
+blueman-applet &
+feh --bg-fill --randomiz ~/Pictures/wallpapers/* &
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &

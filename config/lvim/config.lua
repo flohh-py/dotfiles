@@ -12,6 +12,8 @@ an executable
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
+vim.opt.guifont = "agave Nerd Font:h10"
+
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "\\"
@@ -139,17 +141,17 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 lvim.plugins = {
-    {"rupurt/vim-mql5"},
-    {"dbeniamine/cheat.sh-vim"},
-    {"folke/tokyonight.nvim"},
-    {
-      "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
-      config = function()
-        require("trouble").setup {
+  { "rupurt/vim-mql5" },
+  { "dbeniamine/cheat.sh-vim" },
+  { "folke/tokyonight.nvim" },
+  {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
       }
-      end
-    }
+    end
+  }
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
