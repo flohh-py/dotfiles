@@ -1,0 +1,9 @@
+#!/bin/sh
+
+case "$(printf "lock\\nsuspend\\nhibernate\\nlogout\\nreboot\\npoweroff" | dmenu -p "⏻ ")" in
+	lock) slock -lock ;;
+	suspend) systemctl suspend ;;
+	logout) bspc quit ;;
+	reboot) systemctl reboot ;;
+	poweroff) systemctl poweroff ;;
+esac
