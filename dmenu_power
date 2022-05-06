@@ -3,7 +3,7 @@
 case "$(printf "lock\\nsuspend\\nhibernate\\nlogout\\nreboot\\npoweroff" | dmenu -p "⏻ ")" in
 	lock) slock -lock ;;
 	suspend) systemctl suspend ;;
-	logout) bspc quit ;;
+	logout) pkill dwm ;;
 	reboot) systemctl reboot ;;
 	poweroff) systemctl poweroff ;;
 esac
