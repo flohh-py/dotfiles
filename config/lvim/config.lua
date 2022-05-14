@@ -14,7 +14,6 @@ lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
 vim.opt.guifont = "agave Nerd Font:h10"
 
-
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "\\"
 -- add your own keymapping
@@ -144,6 +143,17 @@ lvim.plugins = {
   { "rupurt/vim-mql5" },
   { "dbeniamine/cheat.sh-vim" },
   { "folke/tokyonight.nvim" },
+  { "vimwiki/vimwiki",
+    config = function()
+      vim.g.vimwiki_list = {
+        {
+          path = '~/wiki',
+          syntax = 'markdown',
+          ext = '.md',
+        }
+      }
+    end
+  },
   {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
@@ -153,7 +163,6 @@ lvim.plugins = {
     end
   }
 }
-
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
