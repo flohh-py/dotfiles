@@ -1,6 +1,6 @@
 #!/bin/sh
 
-case "$(printf "lock\\nsuspend\\nhibernate\\nlogout\\nreboot\\npoweroff" | dmenu -p "⏻ ")" in
+case "$(printf "lock\\nsuspend\\nlogout\\nreboot\\npoweroff" | dmenu -p "⏻ ")" in
 	lock) slock -lock ;;
 	suspend) systemctl suspend ;;
 	logout) pkill dwm ;;
