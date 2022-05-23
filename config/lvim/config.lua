@@ -12,7 +12,8 @@ an executable
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
-vim.opt.guifont = "agave Nerd Font:h10"
+-- vim.opt.guifont = "agave Nerd Font:h10"
+vim.opt.guifont = "hack:h10"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "\\"
@@ -154,6 +155,7 @@ lvim.plugins = {
       }
     end
   },
+  {"michal-h21/vimwiki-sync"},
   {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
