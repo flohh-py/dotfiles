@@ -146,29 +146,29 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 lvim.plugins = {
-    { "rupurt/vim-mql5" },
-    { "dbeniamine/cheat.sh-vim" },
-    { "folke/tokyonight.nvim" },
-    { "vimwiki/vimwiki",
-        config = function()
-            vim.g.vimwiki_list = {
-                {
-                    path = '~/wiki',
-                    syntax = 'markdown',
-                    ext = '.md',
-                }
-            }
-        end
-    },
-    { "michal-h21/vimwiki-sync" },
-    {
-        "folke/trouble.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
-        config = function()
-            require("trouble").setup {
-            }
-        end
-    }
+  { "rupurt/vim-mql5" },
+  { "dbeniamine/cheat.sh-vim" },
+  { "folke/tokyonight.nvim" },
+  { "vimwiki/vimwiki",
+    config = function()
+      vim.g.vimwiki_list = {
+        {
+          path = '~/wiki',
+          syntax = 'markdown',
+          ext = '.md',
+        }
+      }
+    end
+  },
+  {"michal-h21/vimwiki-sync"},
+  {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+      }
+    end
+  }
 }
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
