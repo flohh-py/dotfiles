@@ -11,8 +11,14 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
+lvim.builtin.dap.active = false
 lvim.colorscheme = "onedarker"
 vim.opt.guifont = "agave Nerd Font:h10"
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+
+vim.g.vimwiki_sync_commit_message = 'Auto commit + push. %c'
+vim.g.sync_taskwarrior = 0
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "\\"
@@ -64,18 +70,18 @@ lvim.builtin.nvimtree.show_icons.git = 0
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
-  "yaml",
+    "bash",
+    "c",
+    "javascript",
+    "json",
+    "lua",
+    "python",
+    "typescript",
+    "tsx",
+    "css",
+    "rust",
+    "java",
+    "yaml",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -140,28 +146,29 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 lvim.plugins = {
-  { "rupurt/vim-mql5" },
-  { "dbeniamine/cheat.sh-vim" },
-  { "folke/tokyonight.nvim" },
-  { "vimwiki/vimwiki",
-    config = function()
-      vim.g.vimwiki_list = {
-        {
-          path = '~/wiki',
-          syntax = 'markdown',
-          ext = '.md',
-        }
-      }
-    end
-  },
-  {
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("trouble").setup {
-      }
-    end
-  }
+    { "rupurt/vim-mql5" },
+    { "dbeniamine/cheat.sh-vim" },
+    { "folke/tokyonight.nvim" },
+    { "vimwiki/vimwiki",
+        config = function()
+            vim.g.vimwiki_list = {
+                {
+                    path = '~/wiki',
+                    syntax = 'markdown',
+                    ext = '.md',
+                }
+            }
+        end
+    },
+    { "michal-h21/vimwiki-sync" },
+    {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function()
+            require("trouble").setup {
+            }
+        end
+    }
 }
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
