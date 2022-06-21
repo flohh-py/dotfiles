@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.builtin.dap.active = false
+lvim.builtin.dap.active = true
 lvim.colorscheme = "onedarker"
 vim.opt.guifont = "agave Nerd Font:h10"
 vim.opt.shiftwidth = 4
@@ -66,7 +66,7 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
+-- lvim.builtin.nvimtree.show_icons.git = 0
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -143,34 +143,66 @@ lvim.builtin.treesitter.highlight.enabled = true
 --     filetypes = { "javascript", "python" },
 --   },
 -- }
+lvim.builtin.which_key.mappings["t"] = {
+    name = "Diagnostics",
+    t = { "<cmd>TroubleToggle<cr>", "trouble" },
+    w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "workspace" },
+    d = { "<cmd>TroubleToggle lsp_document_diagnostics<cr>", "document" },
+    q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
+    l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
+    r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
+}
 
 -- Additional Plugins
 lvim.plugins = {
-  { "rupurt/vim-mql5" },
-  { "dbeniamine/cheat.sh-vim" },
-  { "folke/tokyonight.nvim" },
-  { "vimwiki/vimwiki",
-    config = function()
-      vim.g.vimwiki_list = {
-        {
-          path = '~/wiki',
-          syntax = 'markdown',
-          ext = '.md',
-        }
-      }
-    end
-  },
-  {"michal-h21/vimwiki-sync"},
-  {
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("trouble").setup {
-      }
-    end
-  }
+    { "rupurt/vim-mql5" },
+    { "dbeniamine/cheat.sh-vim" },
+    { "folke/tokyonight.nvim" },
+    { "vimwiki/vimwiki",
+        config = function()
+            vim.g.vimwiki_list = {
+                {
+                    path = '~/wiki',
+                    syntax = 'markdown',
+                    ext = '.md',
+                }
+            }
+        end
+    },
+    { "michal-h21/vimwiki-sync" },
+    {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function()
+            require("trouble").setup {
+            }
+        end,
+        cmd = "TroubleToggle",
+    },
+    { "lukas-reineke/indent-blankline.nvim",
+        event = "BufRead",
+        setup = function()
+            vim.g.indentLine_enabled = 1
+            vim.g.indent_blankline_char = "▏"
+            vim.g.indent_blankline_filetype_exclude = { "help", "terminal", "dashboard" }
+            vim.g.indent_blankline_buftype_exclude = { "terminal" }
+            vim.g.indent_blankline_show_trailing_blankline_indent = false
+            vim.g.indent_blankline_show_first_indent_level = false
+        end
+    }
 }
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
+
+-- function GrepInputString()
+--     local default = vim.api.nvim_eval([[expand("<cword>")]])
+--     local input = vim.fn.input({
+--         prompt = "Search for: ",
+--         default = default,
+--     })
+--     require("telescope.builtin").grep_string({ search = input })
+-- end
+
+-- lvim.builtin.which_key.mappings["sT"] = { "<cmd>lua GrepInputString()<CR>", "Text under cursor" }
